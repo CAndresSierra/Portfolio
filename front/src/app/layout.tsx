@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+//Components
+import Header from "@/components/Header";
+import Transition from "@/components/Transition";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetBrainsMono",
+});
 
 export const metadata: Metadata = {
   title: "Camilo Sierra",
@@ -16,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={jetBrainsMono.variable}>
+        <Header />
+        <Transition>{children}</Transition>
+      </body>
     </html>
   );
 }
