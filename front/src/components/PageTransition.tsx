@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const Transition = ({ children }: any) => {
+const PageTransition = ({ children }: any) => {
   const pathname = usePathname();
 
   return (
@@ -27,4 +27,4 @@ const Transition = ({ children }: any) => {
   );
 };
 
-export default Transition;
+export default PageTransition;
