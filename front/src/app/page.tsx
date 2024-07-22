@@ -26,7 +26,7 @@ export default function Home() {
               Estoy dispuesto a contribuir en tu proyecto con el fin de que este
               haga la diferencia.
             </p>
-            <div className="flex justify-between xl:gap-10 xl:justify-start">
+            <div className="flex justify-between gap-5 xl:gap-10 xl:justify-start">
               <a href="./CV Camilo Sierra.pdf" download>
                 <button className="flex gap-2 items-center border-[1px] rounded-full px-4 py-2 text-accent hover:bg-accent hover:text-primary hover:font-bold duration-300 border-accent ">
                   DESCARGAR CV <FiDownload className="text-lg" />
@@ -49,7 +49,7 @@ export default function Home() {
             <img
               src="./foto.png"
               alt="foto"
-              className="rounded-full w-full h-full"
+              className="rounded-full w-full h-full border-2 border-accent"
             />
           </motion.div>
         </div>
