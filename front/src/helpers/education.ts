@@ -1,19 +1,19 @@
 export const education = {
-  title: "Educacion",
+  title: "Mi educacion",
   items: [
     {
       title: "Full-Stack Web Developer",
       enterprise: "soyHenry Bootcamp",
-      duration: "26/02/2024 - 28/06/2024",
+      duration: "feb.2024 - jun.2024",
     },
     {
-      title: "Fundamentos de programacion y tecnologias digitales",
-      enterprise: "Universidad Tecnologica de pereira, Colombia",
-      duration: "01/03/2022 - 16/12/2022",
+      title: "Fundamentos de programacion ",
+      enterprise: "Universidad Tecnologica de pereira",
+      duration: "mar.2022 - dic.2022",
     },
     {
       title: "Upper Intermediate English",
-      enterprise: "Centro Cultural Colombo Americano",
+      enterprise: "Colombo Americano",
       duration: "feb.2016 - nov.2023",
     },
   ],

@@ -41,9 +41,9 @@ export default function Home() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.2, delay: 1, ease: "easeIn" }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2, delay: 1, ease: "easeInOut" }}
             className="h-full xl:w-[40%] flex justify-center mt-10 xl:mt-0"
           >
             <img

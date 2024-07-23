@@ -9,15 +9,19 @@ export const about = {
     },
     {
       title: "Telefono Movil",
-      description: "Camilo Sierra",
+      description: "(+57) 304-331-5068",
     },
     {
       title: "Nacionalidad",
-      description: "Camilo Sierra",
+      description: "Colombiano",
     },
     {
       title: "Email",
       description: "camilofullstack@gmail.com",
+    },
+    {
+      title: "Idiomas",
+      description: "Ingles (B2), Español Nativo",
     },
   ],
 };
