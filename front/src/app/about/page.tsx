@@ -33,7 +33,6 @@ import Vercel from "@/components/SkillIcons/Vercel";
 
 const skills = {
   title: "Tecnologias",
-  description: "Estas son las tecnologias con las que me siento mas comodo",
   skillList: [
     {
       title: "FrontEnd",
@@ -117,10 +116,32 @@ const skills = {
   ],
 };
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 const About = () => {
   return (
     <section className="h-full">
-      <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+      <div className="fixed left-0 top-0 -z-10 h-full w-full">
+        <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+      </div>
       <div className="container mx-auto h-full xl:mt-10">
         <motion.div
           initial={{ x: -1000, opacity: 0 }}
@@ -147,7 +168,25 @@ const About = () => {
               >
                 <h1 className="text-3xl">{about.title}</h1>
                 <p className="text-center text-[15px] xl:text-[17px] xl:text-justify text-white/60">
-                  {about.description}
+                  ¡Hola!, mi nombre es{" "}
+                  <mark className="bg-transparent text-accent/80">
+                    Camilo Sierra
+                  </mark>
+                  . soy{" "}
+                  <mark className="bg-transparent text-orange-500/90">
+                    desarrollador web full-stack
+                  </mark>
+                  . Mi pasion por la tecnologia y el desarrollo web me a hecho
+                  una persona perseverante y dedicada en este mundo, y gracias a
+                  esto he logrado crear{" "}
+                  <mark className="bg-transparent text-accent/80">
+                    aplicaciones web dinamicas, eficientes y escalables
+                  </mark>{" "}
+                  con tecnologias como{" "}
+                  <mark className="bg-transparent text-orange-500/90">
+                    Next.js, Node.js, React
+                  </mark>{" "}
+                  .
                 </p>
                 <div className="flex flex-col gap-5 mt-4">
                   {about.info.map((item, index) => {
@@ -202,26 +241,43 @@ const About = () => {
               >
                 <h1 className="text-3xl">{skills.title}</h1>
                 <p className="text-center text-[15px] xl:text-[17px] xl:text-justify text-white/60">
-                  {skills.description}
+                  En mi camino por el{" "}
+                  <mark className="bg-transparent text-accent/80">
+                    desarrollo Web
+                  </mark>
+                  , he aprendido habilidades y experiencias en una variedad de
+                  tecnologias.{" "}
+                  <mark className="bg-transparent text-orange-500/90">
+                    Mi Stack incluye
+                  </mark>
+                  :
                 </p>
-                <div className="flex flex-col xl:flex-row gap-5 xl:gap-10">
+                <div className="flex flex-col xl:flex-row w-full xl:justify-center gap-5 xl:gap-10">
                   {skills.skillList.map((skill, index) => {
                     return (
-                      <div
+                      <motion.div
                         key={index}
-                        className="flex flex-col justify-center items-center bg-gradient-to-r from-black  to-gray-900 shadow-2xl px-5 py-5 gap-5 rounded-br-2xl rounded-tl-2xl"
+                        className="flex flex-col  items-center bg-gradient-to-r from-black  to-gray-900 shadow-2xl px-5 py-5 gap-5 rounded-br-2xl rounded-tl-2xl outline-1 outline-dashed outline-accent"
                       >
-                        <span className="text-[16px] px-3 py-1  rounded-full shadow-inner  bg-gradient-to-r border-[1px] border-accent   from-[#393939] to-[#292929]  text-white font-bold">
+                        <span className="text-3xl px-3 py-1   bg-gradient-to-b    bg-clip-text text-transparent from-accent  to-white  font-bold">
                           {skill.title}
                         </span>
 
-                        <div className="flex flex-wrap gap-6">
+                        <motion.div
+                          variants={container}
+                          initial="hidden"
+                          animate="visible"
+                          className="grid grid-cols-3 gap-6"
+                        >
                           {skill.icons.map((skill, index) => {
                             return (
                               <TooltipProvider key={index}>
                                 <Tooltip>
                                   <TooltipTrigger>
-                                    <motion.div className="text-[70px] mb-5">
+                                    <motion.div
+                                      variants={item}
+                                      className="text-[50px] xl:text-[70px] mb-5"
+                                    >
                                       {skill.icon}
                                     </motion.div>
                                   </TooltipTrigger>
@@ -230,8 +286,8 @@ const About = () => {
                               </TooltipProvider>
                             );
                           })}
-                        </div>
-                      </div>
+                        </motion.div>
+                      </motion.div>
                     );
                   })}
                 </div>
