@@ -12,7 +12,22 @@ export default function Home() {
       </div>
       <div className="container mx-auto h-full">
         <div className="flex flex-col items-center xl:flex-row justify-between xl:pt-8 xl:pb-24">
-          <div className="text-center flex flex-col xl:text-start items-center xl:items-start">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                delay: 1,
+                duration: 0.8,
+                ease: "easeInOut",
+                type: "spring",
+                bounce: 0.25,
+                damping: 7,
+              },
+            }}
+            className="text-center flex flex-col xl:text-start items-center xl:items-start"
+          >
             <div className="flex flex-row items-center py-1 px-2 bg-gradient-to-r from-[#393939] to-[#292929] rounded-full shadow-xl">
               <span className="bg-gradient-to-r from-cyan-400 to-gray-50 bg-clip-text text-transparent text-sm font-bold antialiased">
                 Hola!, soy Camilo Sierra
@@ -40,12 +55,12 @@ export default function Home() {
                 </button>
               </Link>
             </div>
-          </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.2, delay: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.8, delay: 1, ease: "easeInOut" }}
             className="h-full xl:w-[40%] flex justify-center mt-10 xl:mt-0"
           >
             <img

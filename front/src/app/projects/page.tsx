@@ -1,11 +1,20 @@
+"use client";
+
 import React from "@/components/SkillIcons/React";
 import Nextjs from "@/components/SkillIcons/Nextjs";
 import TailwindCSS from "@/components/SkillIcons/TailwindCSS";
 import TypeScript from "@/components/SkillIcons/TypeScript";
 import PostgreSQL from "@/components/SkillIcons/PostgreSQL";
-import NestJS from "@/components/SkillIcons/Nestjs";
+import NestJS from "@/components/SkillIcons/NestJS";
+import { FaGithub } from "react-icons/fa";
+import { GrDeploy } from "react-icons/gr";
+
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 const Projects = () => {
+  const [isHover, setIsHover] = useState<boolean>(false);
+
   return (
     <section className="h-full">
       <div className="fixed left-0 top-0 -z-10 h-full w-full">
@@ -23,23 +32,75 @@ const Projects = () => {
             </p>
           </div>
           <div className="flex flex-col items-center gap-10 ">
-            <div className="flex flex-col xl:flex-row gap-10 xl:gap-6">
+            <div className="flex flex-col xl:flex-row gap-10 xl:justify-evenly xl:w-full xl:gap-6">
               <div className="flex rounded-3xl flex-col w-[350px] max-w-[350px] bg-gray-900 shadow-3xl">
-                <div
-                  className=" w-full bg-contain  bg-no-repeat h-[200px] rounded-t-3xl flex items-start px-4 py-4"
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { delay: 0.5, duration: 0.2, ease: "easeIn" },
+                  }}
+                  onHoverStart={() => setIsHover(true)}
+                  onHoverEnd={() => setIsHover(false)}
+                  className={`${
+                    isHover
+                      ? "w-full bg-cover  bg-no-repeat h-[200px]  rounded-t-3xl flex items-start"
+                      : "w-full bg-cover  bg-no-repeat h-[200px]  rounded-t-3xl flex items-start px-4 py-4"
+                  }`}
                   style={{ backgroundImage: "url(./YouDrive.png)" }}
                 >
-                  <span className="backdrop-blur-sm shadow-2xl rounded-full flex items-centerpx-2 px-2 py-[6px] ">
-                    <p className="text-xs ">FullStack</p>
-                  </span>
-                </div>
+                  {isHover ? (
+                    <span className=" hidden backdrop-blur-sm shadow-2xl rounded-full  items-centerpx-2 px-2 py-[6px] ">
+                      <p className="text-xs ">FullStack</p>
+                    </span>
+                  ) : (
+                    <motion.span
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.3 },
+                      }}
+                      className="flex backdrop-blur-sm shadow-2xl rounded-full  items-centerpx-2 px-2 py-[6px] "
+                    >
+                      <p className="text-xs ">FullStack</p>
+                    </motion.span>
+                  )}
+                  {isHover && (
+                    <AnimatePresence>
+                      <motion.div
+                        initial={{ scale: 0.5, opacity: 0 }}
+                        animate={{
+                          scale: 1,
+                          opacity: 1,
+                          transition: {
+                            duration: 0.2,
+                            ease: "easeIn",
+                          },
+                        }}
+                        className="backdrop-blur-md backdrop-brightness-50 w-full h-full flex flex-col px-5 py-5 items-center justify-center gap-3 rounded-t-3xl"
+                      >
+                        <a href="">
+                          <button className="flex gap-2 items-center border-[1px] rounded-full px-4  text-accent  hover:bg-accent/80  hover:text-primary hover:font-bold duration-300 border-accent/80 ">
+                            Repo <FaGithub className="size-5" />
+                          </button>
+                        </a>
+                        <a href="">
+                          <button className="flex gap-2 items-center border-[1px] rounded-full px-4  bg-accent/80 border-accent/80 text-primary font-bold hover:bg-transparent hover:text-accent duration-200">
+                            Deploy <GrDeploy />
+                          </button>
+                        </a>
+                      </motion.div>
+                    </AnimatePresence>
+                  )}
+                </motion.div>
                 <div className="px-5 mt-2 mb-5">
                   <h1 className="text-accent text-base">YouDrive App</h1>
                   <p className="text-[13px] text-justify">
                     YouDriveApp es un proyecto grupal, pensado en el alquiler de
                     autos usuario/usuario con funciones de filtrado...
                   </p>
-                  <div className="grid grid-rows-3 grid-flow-col grid-wrap mt-3  gap-2">
+                  <div className="grid  grid-rows-3 grid-flow-col grid-wrap mt-3  gap-2">
                     <span className="bg-black shadow-2xl rounded-xl flex items-center gap-2 w-[120px] mx-w-[120px] px-2 h-8">
                       <React className="text-sm" />
                       <p className="text-xs">React.js</p>
@@ -67,6 +128,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
+
               <div className="flex rounded-3xl flex-col w-[350px] max-w-[350px] bg-gray-900 shadow-3xl">
                 <div
                   className=" w-full bg-contain  bg-no-repeat h-[200px] rounded-t-3xl flex items-start px-4 py-4"
@@ -112,7 +174,7 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="flex flex-col xl:flex-row gap-10 xl:gap-6">
+            <div className="flex flex-col xl:flex-row gap-10  xl:justify-evenly xl:w-full xl:gap-6">
               <div className="flex rounded-3xl flex-col w-[350px] max-w-[350px] bg-gray-900 shadow-3xl">
                 <div
                   className=" w-full bg-contain  bg-no-repeat h-[200px] rounded-t-3xl flex items-start px-4 py-4"
@@ -156,6 +218,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
+
               <div className="flex rounded-3xl flex-col w-[350px] max-w-[350px] bg-gray-900 shadow-3xl">
                 <div
                   className=" w-full bg-contain  bg-no-repeat h-[200px] rounded-t-3xl flex items-start px-4 py-4"

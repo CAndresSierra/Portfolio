@@ -12,7 +12,7 @@ export const education = {
       duration: "mar.2022 - dic.2022",
     },
     {
-      title: "Upper Intermediate English",
+      title: "Upper Intermediate English (B2)",
       enterprise: "Colombo Americano",
       duration: "feb.2016 - nov.2023",
     },

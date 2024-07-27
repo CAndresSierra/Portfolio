@@ -30,6 +30,9 @@ import Github from "@/components/SkillIcons/Github";
 import Postman from "@/components/SkillIcons/Postman";
 import VisualStudioCode from "@/components/SkillIcons/VisualStudioCode";
 import Vercel from "@/components/SkillIcons/Vercel";
+import Redux from "@/components/SkillIcons/Redux";
+import C from "@/components/SkillIcons/C";
+import Net from "@/components/SkillIcons/Net";
 
 const skills = {
   title: "Tecnologias",
@@ -65,6 +68,10 @@ const skills = {
           name: "HTML5",
           icon: <HTML5 />,
         },
+        {
+          name: "Redux",
+          icon: <Redux />,
+        },
       ],
     },
     {
@@ -89,7 +96,7 @@ const skills = {
       ],
     },
     {
-      title: "Tools",
+      title: "Herramientas",
       icons: [
         {
           name: "Git",
@@ -110,6 +117,19 @@ const skills = {
         {
           name: "Vercel",
           icon: <Vercel />,
+        },
+      ],
+    },
+    {
+      title: "Aprendiendo",
+      icons: [
+        {
+          name: "CSharp",
+          icon: <C />,
+        },
+        {
+          name: ".Net",
+          icon: <Net />,
         },
       ],
     },
@@ -184,9 +204,8 @@ const About = () => {
                   </mark>{" "}
                   con tecnologias como{" "}
                   <mark className="bg-transparent text-orange-500/90">
-                    Next.js, Node.js, React
+                    Next.js, Node.js, React.
                   </mark>{" "}
-                  .
                 </p>
                 <div className="flex flex-col gap-5 mt-4">
                   {about.info.map((item, index) => {
@@ -208,11 +227,40 @@ const About = () => {
                 className="flex flex-col gap-5 xl:justify-start xl:items-start  justify-center items-center mt-5"
               >
                 <h1 className="text-3xl">{education.title}</h1>
+                <p className="text-center text-[15px] xl:text-[17px] xl:text-justify text-white/60">
+                  Me empecé a interesar por el mundo del desarrollo Web cuando
+                  Tomé mi primer curso llamado{" "}
+                  <mark className="bg-transparent text-accent/80">
+                    Fundamentos de programación y Tecnologías digitales{" "}
+                  </mark>{" "}
+                  , en el cual aprendí las bases de la Programación con{" "}
+                  <mark className="bg-transparent text-orange-500/90">
+                    python, además de html, css y un poco de Django
+                  </mark>
+                  . Desde este primer curso supe a que me quería dedicar. Así
+                  que luego con esas bases aplique al{" "}
+                  <mark className="text-cyan-500/90 bg-transparent">
+                    {" "}
+                    bootcamp intensivo de Soy Henry
+                  </mark>
+                  , en el cual demostré dominio en tecnologías como Html. Css,
+                  JavaScript, Typescript, React, Next.js, Node.js, Express Y
+                  bases de datos. También durante mi etapa en el colegio tuve
+                  Clases de inglés intensivas y gracias a esto poseo un{" "}
+                  <mark className="bg-transparent text-red-500">nivel B2 </mark>
+                  En este idioma. Actualmente me encuentro aprendiendo el
+                  lenguaje de programacion{" "}
+                  <mark className="bg-transparent text-accent/80">
+                    {" "}
+                    C# y .Net{" "}
+                  </mark>
+                  , ya que es algo que me intersa mucho.
+                </p>
                 <div className="flex  flex-col xl:flex-row gap-5 xl:gap-10 ">
                   {education.items.map((item, index) => {
                     return (
                       <motion.div
-                        initial={{ y: 250, opacity: 0 }}
+                        initial={{ y: 100, opacity: 0 }}
                         animate={{
                           opacity: 1,
                           y: 0,
@@ -257,6 +305,13 @@ const About = () => {
                     return (
                       <motion.div
                         key={index}
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{
+                          opacity: 1,
+                          scale: 1,
+
+                          transition: { duration: 0.5, ease: "easeInOut" },
+                        }}
                         className="flex flex-col  items-center bg-gradient-to-r from-black  to-gray-900 shadow-2xl px-5 py-5 gap-5 rounded-br-2xl rounded-tl-2xl outline-1 outline-dashed outline-accent"
                       >
                         <span className="text-3xl px-3 py-1   bg-gradient-to-b    bg-clip-text text-transparent from-accent  to-white  font-bold">
@@ -276,7 +331,7 @@ const About = () => {
                                   <TooltipTrigger>
                                     <motion.div
                                       variants={item}
-                                      className="text-[50px] xl:text-[70px] mb-5"
+                                      className="text-[50px] xl:text-[65px] mb-5"
                                     >
                                       {skill.icon}
                                     </motion.div>
