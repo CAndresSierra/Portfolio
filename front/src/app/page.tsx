@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { url } from "inspector";
 
 export default function Home() {
   return (
@@ -67,9 +68,11 @@ export default function Home() {
             className="h-full xl:w-[40%] flex justify-center mt-10 xl:mt-0"
           >
             <Image
-              src="./foto.png"
+              src="/foto.png"
               alt="foto"
-              className="rounded-full w-full h-full border-2 border-accent"
+              className="rounded-full   border-2 border-accent"
+              width={300}
+              height={300}
             />
           </motion.div>
         </div>
