@@ -4,6 +4,7 @@ import { FiDownload } from "react-icons/fi";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -65,7 +66,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 1, ease: "easeInOut" }}
             className="h-full xl:w-[40%] flex justify-center mt-10 xl:mt-0"
           >
-            <img
+            <Image
               src="./foto.png"
               alt="foto"
               className="rounded-full w-full h-full border-2 border-accent"
