@@ -3,13 +3,15 @@
 import { FiDownload } from "react-icons/fi";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   return (
     <section className="h-full">
       <div className="fixed left-0 top-0 -z-10 h-full w-full">
-        <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+        <div className="absolute top-0 z-[-2] h-screen w-screen bg-slate-300 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(137, 135, 230, 0.493),rgba(255,255,255,0))] dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
       </div>
+
       <div className="container mx-auto h-full">
         <div className="flex flex-col items-center xl:flex-row justify-between xl:pt-8 xl:pb-24">
           <motion.div
