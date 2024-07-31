@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { url } from "inspector";
+import foto from "../../public/Foto.png";
 
 export default function Home() {
   return (
@@ -67,8 +67,8 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 1, ease: "easeInOut" }}
             className="h-full xl:w-[40%] flex justify-center mt-10 xl:mt-0"
           >
-            <img
-              src="/foto.png"
+            <Image
+              src={foto}
               alt="foto"
               className="rounded-full   border-2 border-accent"
               width={300}
