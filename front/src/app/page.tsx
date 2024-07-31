@@ -67,7 +67,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 1, ease: "easeInOut" }}
             className="h-full xl:w-[40%] flex justify-center mt-10 xl:mt-0"
           >
-            <Image
+            <img
               src="/foto.png"
               alt="foto"
               className="rounded-full   border-2 border-accent"
