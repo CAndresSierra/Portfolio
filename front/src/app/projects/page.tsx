@@ -49,13 +49,15 @@ const Projects = () => {
   return (
     <section className="h-full">
       <div className="fixed left-0 top-0 -z-10 h-full w-full">
-        <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+        <div className="absolute top-0 z-[-2] h-screen w-screen bg-gray-200 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(78, 76, 207, 0.322),rgba(255,255,255,0))] dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
       </div>
       <div className="container mx-auto h-full xl:mt-10">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col items-center xl:items-start">
-            <h1 className="text-3xl ">Proyectos</h1>
-            <p className="text-center text-[15px] xl:text-[17px] xl:text-justify text-white/60">
+            <h1 className="text-3xl text-primary dark:text-white ">
+              Proyectos
+            </h1>
+            <p className="text-center  font-medium dark:font-normal  text-[15px] xl:text-[17px] xl:text-justify text-primary/80 dark:text-white/60">
               Mis proyectos mas creativos. Cada uno de estos proyectos demuestra
               mi dedicacion, autonomia, trabajo en equipo y mi pasion por la
               programacion. Cada una de esas cualidades me permitio transformar

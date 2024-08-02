@@ -17,8 +17,8 @@ const Header = () => {
       <div className="container flex justify-between items-center ">
         {/* Logo */}
         <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            CS<span className="text-accent">.</span>
+          <h1 className="text-4xl font-semibold text-primary dark:text-white">
+            CS<span className="text-cyan-500 dark:text-accent">.</span>
           </h1>
         </Link>
         {/* Desktop Nav*/}
@@ -39,7 +39,7 @@ const Header = () => {
               transition: { duration: 0.2, ease: "easeOut" },
             }}
             whileTap={{ scale: 0.9 }}
-            className="px-2 py-2 rounded-full text-accent border-accent border-[1px] hover:bg-accent hover:text-primary "
+            className="px-2 py-2 rounded-full text-primary border-primary border-2 hover:text-accent hover:bg-primary hover:border-accent  dark:text-accent dark:border-accent dark:border-[1px] dark:hover:bg-accent  dark:hover:text-primary "
           >
             <FaLinkedinIn className="w-4 h-4" />
           </motion.a>
@@ -51,7 +51,7 @@ const Header = () => {
               transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.9 }}
-            className="px-2 py-2 rounded-full text-accent border-accent border-[1px] hover:bg-accent hover:text-primary "
+            className="px-2 py-2 rounded-full text-primary border-primary border-2 hover:text-accent hover:bg-primary hover:border-accent  dark:text-accent dark:border-accent dark:border-[1px] dark:hover:bg-accent  dark:hover:text-primary "
           >
             <FaGithub className="w-4 h-4" />
           </motion.a>
@@ -62,13 +62,13 @@ const Header = () => {
               transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.9 }}
-            className="px-2 py-2 rounded-full text-accent border-accent border-[1px] hover:bg-accent hover:text-primary "
+            className="px-2 py-2 rounded-full text-primary border-primary border-2 hover:text-accent hover:bg-primary hover:border-accent  dark:text-accent dark:border-accent dark:border-[1px] dark:hover:bg-accent  dark:hover:text-primary  "
           >
             <FaInstagram className="w-4 h-4" />
           </motion.a>
         </div>
         {/*Mobile Nav */}
-        <div className="flex items-center px-1 py-1 hover:bg-[#282829] rounded-lg transition-all duration-200 xl:hidden">
+        <div className="flex items-center px-1 py-1 hover:bg-[#cccbcb] dark:hover:bg-[#282829] rounded-lg transition-all duration-200 xl:hidden">
           <MobileNav />
         </div>
       </div>

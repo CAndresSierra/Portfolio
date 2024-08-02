@@ -33,45 +33,34 @@ const links = [
 const Nav = () => {
   const pathname = usePathname();
 
-  const [lightMode, setLightMode] = useState<string>("");
-  const [darkMode, setDarkMode] = useState<string>("");
-  const [theme, setTheme] = useState();
-
-  console.log(darkMode);
+  const [lightMode, setLightMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
   useEffect(() => {
-    if (
-      lightMode === "light" &&
-      typeof window !== undefined &&
-      window.localStorage
-    ) {
+    if (lightMode) {
       document.querySelector("html")?.classList.add("light");
-
-      const theme = localStorage.setItem("theme", JSON.stringify("light"));
     } else {
       document.querySelector("html")?.classList.remove("light");
     }
   }, [lightMode]);
 
   useEffect(() => {
-    if (darkMode === "dark") {
+    if (darkMode) {
       document.querySelector("html")?.classList.add("dark");
-      const theme = localStorage.setItem("theme", JSON.stringify("dark"));
     } else {
       document.querySelector("html")?.classList.remove("dark");
     }
   }, [darkMode]);
 
   const handleLightMode = () => {
-    setLightMode("light");
-    setDarkMode("");
+    setLightMode(true);
+    setDarkMode(false);
   };
 
   const handleDarkMode = () => {
-    setDarkMode("dark");
-    setLightMode("");
+    setDarkMode(true);
+    setLightMode(false);
   };
-
   return (
     <nav className="flex gap-8">
       {links.map((link, index) => {
@@ -80,8 +69,10 @@ const Nav = () => {
             key={index}
             href={link.path}
             className={`${
-              link.path === pathname && "text-accent border-b-2 border-accent"
-            } capitalize font-medium hover:text-accent transition-all duration-200 `}
+              link.path === pathname
+                ? "text-cyan-500 border-cyan-500 dark:text-accent border-b-2 dark:border-accent"
+                : "text-primary dark:text-white"
+            } capitalize  font-semibold hover:text-cyan-500 dark:hover:text-accent transition-all duration-200 `}
           >
             {link.name}
           </Link>
@@ -89,7 +80,7 @@ const Nav = () => {
       })}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className="px-5 text-primary bg-accent font-bold hover:bg-accent/70 rounded-3xl duration-200">
+          <button className="px-5 text-primary bg-cyan-400 hover:bg-cyan-500  dark:bg-accent font-bold dark:hover:bg-accent/70 rounded-3xl duration-200">
             Tema
           </button>
         </DropdownMenuTrigger>
@@ -98,7 +89,7 @@ const Nav = () => {
             <button
               onClick={handleLightMode}
               className={`${
-                lightMode === "light" && "text-cyan-500 font-bold"
+                lightMode && "text-cyan-500 font-bold"
               } flex flex-row items-center gap-2 hover:bg-gray-300 dark:hover:bg-slate-900 w-full px-2 rounded-md duration-200`}
             >
               <MdOutlineLightMode />
@@ -107,7 +98,7 @@ const Nav = () => {
             <button
               onClick={handleDarkMode}
               className={`${
-                darkMode === "dark" && "text-accent font-bold"
+                darkMode && "text-accent font-bold"
               } flex flex-row items-center gap-2  hover:bg-gray-300 dark:hover:bg-slate-900 w-full px-2 rounded-md duration-200`}
             >
               <MdOutlineDarkMode />

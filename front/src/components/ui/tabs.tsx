@@ -14,7 +14,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "flex flex-col xl:flex-row xl:bg-gradient-to-r from-[#292929] to-[#191919] max-w-[350px] w-full h-auto justify-center rounded-md gap-5 px-4 py-2  ",
+      "flex flex-col xl:flex-row xl:bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 dark:xl:bg-gradient-to-r dark:from-[#292929] dark:to-[#191919] max-w-[350px] w-full h-auto justify-center rounded-md gap-5 px-4 py-2  ",
       className
     )}
     {...props}
@@ -29,7 +29,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex w-full items-center justify-center whitespace-nowrap rounded-lg px-2 py-3 xl:py-1 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-1 data-[state=inactive]:bg-primary xl:data-[state=inactive]:bg-transparent data-[state=active]:bg-accent data-[state=active]:font-bold data-[state=active]:text-slate-950 data-[state=active]:shadow-xl dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:data-[state=active]:bg-slate-950 dark:data-[state=active]:text-slate-50",
+      "inline-flex w-full items-center justify-center whitespace-nowrap rounded-lg px-2 py-3 xl:py-1 text-sm font-semibold dark:font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-1 xl:data-[state=inactive]:text-primary data-[state=inactive]:text-white  data-[state=inactive]:bg-primary xl:data-[state=inactive]:bg-transparent data-[state=active]:bg-cyan-400 data-[state=active]:font-bold data-[state=active]:text-slate-950 data-[state=active]:shadow-xl dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:data-[state=active]:bg-accent dark:data-[state=inactive]:text-white dark:data-[state=active]:font-bold dark:data-[state=active]:text-primary",
       className
     )}
     {...props}
