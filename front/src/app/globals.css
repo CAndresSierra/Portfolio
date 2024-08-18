@@ -6,3 +6,9 @@
     @apply font-primary bg-primary text-white leading-loose;
   }
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
