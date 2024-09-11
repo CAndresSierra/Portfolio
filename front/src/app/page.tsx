@@ -53,11 +53,11 @@ export default function Home() {
                   DESCARGAR CV <FiDownload className="text-lg" />
                 </button>
               </a>
-              <Link href="/contact">
+              {/* <Link href="/contact">
                 <button className="flex gap-2 items-center border-[1px] rounded-full px-4 py-2 hover:bg-cyan-500 bg-cyan-400 border-cyan-400 dark:bg-accent dark:border-accent text-primary font-bold dark:hover:bg-transparent dark:hover:text-accent duration-200">
                   Contactame
                 </button>
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
 
