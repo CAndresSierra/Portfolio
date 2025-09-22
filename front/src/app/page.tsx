@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import Image from "next/image";
-import foto from "../../public/Foto.png";
+import foto from "../../public/fotolinpro.jpg";
 
 export default function Home() {
   return (
@@ -48,7 +48,7 @@ export default function Home() {
               haga la diferencia.
             </p>
             <div className="flex justify-between gap-5 xl:gap-10 xl:justify-start">
-              <a href="./CV Camilo Sierra.pdf" download>
+              <a href="./CV_Camilo_Sierra.pdf" download>
                 <button className="flex gap-2 items-center border-[1px] rounded-full px-4 py-2 font-bold text-primary border-primary  hover:text-accent hover:bg-primary hover:border-accent dark:text-accent dark:hover:bg-accent dark:hover:text-primary dark:hover:font-bold duration-300 dark:border-accent ">
                   DESCARGAR CV <FiDownload className="text-lg" />
                 </button>
@@ -65,12 +65,12 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1, ease: "easeInOut" }}
-            className="h-full xl:w-[40%] flex justify-center mt-10 xl:mt-0"
+            className="h-[300px] xl:w-[40%] flex justify-center mt-10 xl:mt-0 "
           >
             <Image
               src={foto}
               alt="foto"
-              className="rounded-full   border-2 border-cyan-400 dark:border-accent"
+              className="rounded-full object-cover border-2 border-cyan-400 dark:border-accent"
               width={300}
               height={300}
             />
